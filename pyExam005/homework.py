@@ -99,7 +99,15 @@ def printGugudanWithList(startNum, endNum, numOfRow):
     for i in range(1, 10):
         for j in range(startNum, endNum + 1):
             row = str(j) + " X " + str(i) + " = " + str(j * i);
+            # 가령 startNum = 2이고 endNum = 5일 경우,
+            # middleList에는 "2 x 1 = 2", "3 x 1 = 3", "4 x 1 = 4", "5 x 1 = 5" 각각 하나씩이
+            # "2 x 2 = 4", "3 x 2 = 6", "4 x 2 = 8", "5 x 2 = 10" 각각 하나씩이, ....
+            # "2 x 9 = 18", "3 x 9 = 27", "4 x 9 = 36", "5 x 9 = 45"까지 각각 하나씩 저장됨.
             middleList.append(row);
+            # 가령 startNum = 2이고 endNum = 5일 경우,
+            # lastList에는 ["2 x 1 = 2", "3 x 1 = 3", "4 x 1 = 4", "5 x 1 = 5"],
+            # ["2 x 2 = 4", "3 x 2 = 6", "4 x 2 = 8", "5 x 2 = 10"], ....
+            # ["2 x 9 = 18", "3 x 9 = 27", "4 x 9 = 36", "5 x 9 = 45"]가 각 묶음으로 저장됨.
         lastList.append(middleList);
         middleList = [];
     
